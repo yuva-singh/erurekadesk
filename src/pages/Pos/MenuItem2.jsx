@@ -308,7 +308,7 @@ function MenuItem2() {
                                 >
                                   <img
                                     src={
-                                      data.images == null
+                                      data.images !== null
                                         ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMgPtF8x4lhf4oH0rSo-mEMnTMGcUZhXmXvg&usqp=CAU"
                                         : `https://eureka-desk.onrender.com/images/${data.images}`
                                     }
