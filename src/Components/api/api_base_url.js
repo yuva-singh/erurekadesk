@@ -1,4 +1,4 @@
-export const baseUrl = "https://eureka-desk.onrender.com/";
+export const baseUrl = "http://eureka-desk.onrender.com/";
 export const addFoodAPI = `${baseUrl + "vendor/food"}`;
 export const getFoodAPI = `${baseUrl + "vendor/food"}`;
 export const registerRestaurentAPI = `${baseUrl + "admin/vendor"}`;
