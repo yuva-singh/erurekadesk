@@ -16,7 +16,7 @@
               src={
                 data.images == null
                   ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMgPtF8x4lhf4oH0rSo-mEMnTMGcUZhXmXvg&usqp=CAU"
-                  : `https://eureka-desk.onrender.com/images/${data.images}`
+                  : `http://13.233.151.208:8000/images/${data.images}`
               }
               width={"50px"}
               height={"50px"}

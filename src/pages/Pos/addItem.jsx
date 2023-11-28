@@ -265,7 +265,7 @@ function AddItem() {
                     padding: "3px, 19px, 3px, 19px",
                   }}
                 >
-                  Add Category
+                  Add Food
                 </button>
               </div>
             </form>

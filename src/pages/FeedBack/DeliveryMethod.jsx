@@ -8,7 +8,7 @@ function DeliveryMethod() {
   return (
     <>
     {/* <FeedbackHeader /> */}
-      <div className="container-fluid border-bottom">
+      <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-lg-11 col-reverse my-3">
             <div className="d-flex justify-content-between">
@@ -59,6 +59,7 @@ function DeliveryMethod() {
           </div>
         </div>
         </div>
+        <hr />
       
       <div className="container-fluid">
         <div className="row flex-row-reverse d-flex justify-content-center">

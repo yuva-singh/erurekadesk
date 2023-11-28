@@ -39,6 +39,7 @@ function MenuItem2() {
   const [catname, setcatname] = useState(["All Foods"]);
   const [id, setid] = useState([]);
   const [fooddetail, setfooddetail] = useState([]);
+  const [catimg, setcatimg] = useState([]);
 
   console.log(name, description, images[0]);
 
@@ -194,33 +195,6 @@ function MenuItem2() {
     setcatname("All Foods");
   }, []);
 
-  const addCategory = [
-    {
-      id: "1",
-
-      CategoryName: "Beer",
-    },
-    {
-      id: "2",
-      CategoryName: "Food",
-    },
-    {
-      id: "3",
-      CategoryName: "Snacks",
-    },
-    {
-      id: "4",
-      CategoryName: "Appetizers",
-    },
-    {
-      id: "5",
-      CategoryName: "Jin",
-    },
-    {
-      id: "6",
-      CategoryName: "Beer",
-    },
-  ];
   return (
     <React.Fragment>
       <MenuHeader />
@@ -294,6 +268,47 @@ function MenuItem2() {
                           >
                             All Foods
                           </Link> */}
+                          <tr>
+                            <td onClick={() => getFoods("All Foods")}>
+                              <img
+                                src={
+                                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMgPtF8x4lhf4oH0rSo-mEMnTMGcUZhXmXvg&usqp=CAU"
+                                }
+                                width={"50px"}
+                                height={"50px"}
+                                style={{
+                                  borderRadius: "50%",
+                                  marginRight: ".3rem",
+                                }}
+                              />
+                              <span
+                                className={`${
+                                  catname == "All Foods" ? "color mx-2" : "mx-2"
+                                }`}
+                              >
+                                All Foods
+                              </span>
+                            </td>
+                            <td>
+                              {/* <div className="d-flex">
+                                <div className="content-center">
+                                  <i
+                                    // data-bs-toggle="modal"
+                                    // data-bs-target="#exampleModal3"
+                                    className="bi bi-pencil-square"
+                                    style={{ cursor: "pointer" }}
+                                  ></i>
+                                  <i
+                                    className="bi bi-archive text-danger px-2"
+                                    style={{ cursor: "pointer" }}
+                                  ></i>
+                                </div>
+                                <div className="content-center">
+                                  <Switch defaultChecked color="success" />
+                                </div>
+                              </div> */}
+                            </td>
+                          </tr>
                           {getcategorydata.map((data, index) => {
                             return (
                               <tr key={data.id}>
@@ -307,10 +322,14 @@ function MenuItem2() {
                                   }
                                 >
                                   <img
+                                    data-bs-toggle="modal"
+                                    // data-bs-target={`#exampleModal${data._id}`}
+                                    data-bs-target={`#exampleModal5`}
+                                    onClick={() => setcatimg(data.images)}
                                     src={
-                                      data.images !== null
+                                      data.images == null
                                         ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMgPtF8x4lhf4oH0rSo-mEMnTMGcUZhXmXvg&usqp=CAU"
-                                        : `https://eureka-desk.onrender.com/images/${data.images}`
+                                        : `http://13.233.151.208:8000/images/${data.images}`
                                     }
                                     width={"50px"}
                                     height={"50px"}
@@ -363,7 +382,7 @@ function MenuItem2() {
                                   src={
                                     data.images == null
                                       ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMgPtF8x4lhf4oH0rSo-mEMnTMGcUZhXmXvg&usqp=CAU"
-                                      : `https://eureka-desk.onrender.com/images/${data.images}`
+                                      : `http://13.233.151.208:8000/images/${data.images}`
                                   }
                                   width={"50px"}
                                   height={"50px"}
@@ -468,7 +487,7 @@ function MenuItem2() {
                                   src={
                                     data.images == null
                                       ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMgPtF8x4lhf4oH0rSo-mEMnTMGcUZhXmXvg&usqp=CAU"
-                                      : `https://eureka-desk.onrender.com/images/${data.images}`
+                                      : `http://13.233.151.208:8000/images/${data.images}`
                                   }
                                   width={"50px"}
                                   height={"50px"}
@@ -843,7 +862,7 @@ function MenuItem2() {
           <div className="modal-content">
             <div className="modal-header">
               <h1 className="modal-title fs-5" id="exampleModalLabe2">
-                Image
+              Food Image
               </h1>
               <button
                 type="button"
@@ -858,7 +877,47 @@ function MenuItem2() {
                   src={
                     fooddetail.images == null
                       ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMgPtF8x4lhf4oH0rSo-mEMnTMGcUZhXmXvg&usqp=CAU"
-                      : `https://eureka-desk.onrender.com/images/${fooddetail.images}`
+                      : `http://13.233.151.208:8000/images/${fooddetail.images}`
+                  }
+                  className="rounded"
+                  width={"100%"}
+                  height={"250"}
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* popup */}
+      <div
+        className="modal fade"
+        // id={`exampleModal${data._id}`}
+        id={`exampleModal5`}
+        tabIndex="-1"
+        aria-labelledby="exampleModalLabe2"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h1 className="modal-title fs-5" id="exampleModalLabe2">
+               Category Image
+              </h1>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="modal-body">
+              <div className="form-group my-3">
+                <img
+                  src={
+                    catimg == null
+                      ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMgPtF8x4lhf4oH0rSo-mEMnTMGcUZhXmXvg&usqp=CAU"
+                      : `http://13.233.151.208:8000/images/${catimg}`
                   }
                   className="rounded"
                   width={"100%"}

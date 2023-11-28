@@ -74,7 +74,7 @@ function Survey() {
   return (
     <>
       {/* <FeedbackHeader /> */}
-      <div className="container-fluid border-bottom">
+      <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-lg-11 my-3">
             <div className="d-flex justify-content-between">
@@ -125,10 +125,11 @@ function Survey() {
             </div>
           </div>
         </div>
+        <hr />
       </div>
       <div className="container-fluid">
         <div className="row justify-content-center">
-          <div className="col-lg-6 position-relative">
+          <div className="col-lg-6">
             <div className="row mx-0">
               <div className="my-2">
                 <div className="text-start">
@@ -240,7 +241,7 @@ function Survey() {
                         onChange={(e) => setdescription(e.target.value)}
                       />
                     </div>
-                    {/* <div className="my-3">
+                    <div className="my-3">
                       <label htmlFor="" style={{ fontSize: "12px" }}>
                         Color
                       </label>
@@ -254,7 +255,7 @@ function Survey() {
                           <input type="color" value="#f87b09"></input>
                         </div>
                       </div>
-                    </div> */}
+                    </div>
                     <div
                       className="my-2 p-3 rounded"
                       style={{

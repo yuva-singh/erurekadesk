@@ -532,7 +532,7 @@ function TakeAway() {
                   Net Total : 3700Rs
                 </h5>
               </div>
-              <div className="mx-2">
+              {/* <div className="mx-2">
                 <form action="">
                   <div className="row justify-content-end">
                     <div className="mb-1 col-lg-5 col-6">
@@ -561,7 +561,7 @@ function TakeAway() {
                     </div>
                   </div>
                 </form>
-              </div>
+              </div> */}
               {/* payment button */}
               <div className="text-end mx-2">
                 <button
